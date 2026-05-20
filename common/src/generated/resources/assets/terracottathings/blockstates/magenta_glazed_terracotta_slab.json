@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "terracottathings:block/magenta_glazed_terracotta_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/magenta_glazed_terracotta"
+    },
+    "type=top": {
+      "model": "terracottathings:block/magenta_glazed_terracotta_slab_top"
+    }
+  }
+}

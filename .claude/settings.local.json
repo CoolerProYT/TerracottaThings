@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"D:\\\\minecraft_mod\\\\TerracottaThings\" -Recurse -Directory)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Sort-Object)",
+      "Bash(Get-ChildItem *)",
+      "mcp__ide__getDiagnostics",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\minecraft_mod\\\\TerracottaThings\\\\common\\\\src\\\\main\\\\resources\\\\data\\\\minecraft\\\\tags\\\\block\")",
+      "Bash(Out-Null)",
+      "Bash(jar tf *)",
+      "Bash(grep \"\\\\.class$\")",
+      "Bash(jar xf *)",
+      "Bash(cat /tmp/mcsrc/net/minecraft/world/level/block/state/properties/WoodType.java)",
+      "Read(//c/Users/User/.gradle/caches/ng_execute/130d9fd9ac53fec28075a8c158fd9ec365137f6ccfeaef5bcd9b5b673c60bc5b/transformed/net/minecraft/world/level/chunk/**)",
+      "Bash(xargs grep -l \"addSupportedBlock\\\\|addValidBlock\")",
+      "Bash(xargs head -15)",
+      "Bash(xargs grep -n \"fires\\\\|IModBusEvent\\\\|timing\\\\|RegisterEvent\")",
+      "Bash(sed -n '80,100p' \"/c/Users/User/.gradle/caches/ng_execute/130d9fd9ac53fec28075a8c158fd9ec365137f6ccfeaef5bcd9b5b673c60bc5b/transformed/net/minecraft/data/loot/BlockLootSubProvider.java\")",
+      "Bash(sed -n '785,800p' \"/c/Users/User/.gradle/caches/ng_execute/130d9fd9ac53fec28075a8c158fd9ec365137f6ccfeaef5bcd9b5b673c60bc5b/transformed/net/minecraft/data/loot/BlockLootSubProvider.java\")",
+      "Bash(sed -n '196,215p' \"/c/Users/User/.gradle/caches/ng_execute/130d9fd9ac53fec28075a8c158fd9ec365137f6ccfeaef5bcd9b5b673c60bc5b/transformed/net/minecraft/data/loot/BlockLootSubProvider.java\")",
+      "Bash(grep -v \"import\\\\|//\")",
+      "Bash(xargs grep -n \"BLOCK\")",
+      "Bash(xargs grep -n \"BLOCK\\\\b\\\\|public static final\")",
+      "Bash(xargs grep -n \"createProvider\\\\|getLookupProvider\\\\|getOutput\\\\|CompletableFuture\")",
+      "Bash(xargs grep -n \"REGISTRY\\\\|allFlags\")"
+    ]
+  }
+}

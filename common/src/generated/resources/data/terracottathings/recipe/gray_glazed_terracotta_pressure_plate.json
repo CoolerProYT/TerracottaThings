@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "minecraft:gray_glazed_terracotta"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "terracottathings:gray_glazed_terracotta_pressure_plate"
+  }
+}
