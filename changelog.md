@@ -1,0 +1,1 @@
+- Fixed stairs and slabs has no correct tools

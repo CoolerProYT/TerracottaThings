@@ -1,5 +1,6 @@
-// 26.1.2	2026-05-20T19:24:26.603361	Tags for minecraft:block mod id terracottathings
+// 26.1.2	2026-05-30T16:37:04.3370711	Tags for minecraft:block mod id terracottathings
 f7c79033c3e25b780cbdb2af927534845b703e66 data/minecraft/tags/block/buttons.json
+f88a24eac49aa5d03d3f5b1ce64500099368c6a3 data/minecraft/tags/block/mineable/pickaxe.json
 4a3c9aecf74cbc43ec804d0ee371682435376d48 data/minecraft/tags/block/pressure_plates.json
 5c2caca0e7cfb18b3440c64e6d50aef1b4fbda9b data/minecraft/tags/block/slabs.json
 437fd9f0d7c05f36eef97295bdae7ef8f1e6e2a3 data/minecraft/tags/block/stairs.json
