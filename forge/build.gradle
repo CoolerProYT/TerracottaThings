@@ -47,7 +47,7 @@ repositories {
 sourceSets.main.resources.srcDir 'src/generated/resources'
 
 dependencies {
-    implementation minecraft.dependency("net.minecraftforge:forge:$minecraft_version-$forge_version")
+    implementation minecraft.dependency("net.minecraftforge:forge:$dependencies_mc_version-$forge_version")
     annotationProcessor 'org.spongepowered:mixin:0.8.7:processor'
 }
 

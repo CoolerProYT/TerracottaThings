@@ -73,7 +73,9 @@ processResources {
             "forge_version"                : forge_version,
             "forge_loader_version_range"   : forge_loader_version_range,
             'credits'                      : credits,
-            'java_version'                 : java_version
+            'java_version'                 : java_version,
+            'dependencies_mc_version'      : dependencies_mc_version,
+            'fabric_mc_version_range'      : fabric_mc_version_range
     ]
 
     var jsonExpandProps = expandProps.collectEntries {
