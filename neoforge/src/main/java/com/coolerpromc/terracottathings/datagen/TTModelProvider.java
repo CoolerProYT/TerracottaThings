@@ -18,10 +18,10 @@ public class TTModelProvider extends ModelProvider {
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         registerAll(blockModels, TTBlocks.TERRACOTTA_BUTTON.get(), TTBlocks.TERRACOTTA_PRESSURE_PLATE.get(), TTBlocks.TERRACOTTA_STAIRS.get(), TTBlocks.TERRACOTTA_SLAB.get(), TTBlocks.TERRACOTTA_WALL.get(), Blocks.TERRACOTTA);
-        /*for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : DyeColor.values()) {
             registerAll(blockModels, TTBlocks.DYED_TERRACOTTA_BUTTONS.pick(color).get(), TTBlocks.DYED_TERRACOTTA_PRESSURE_PLATES.pick(color).get(), TTBlocks.DYED_TERRACOTTA_STAIRS.pick(color).get(), TTBlocks.DYED_TERRACOTTA_SLABS.pick(color).get(), TTBlocks.DYED_TERRACOTTA_WALLS.pick(color).get(), Blocks.DYED_TERRACOTTA.pick(color));
             registerAll(blockModels, TTBlocks.GLAZED_TERRACOTTA_BUTTONS.pick(color).get(), TTBlocks.GLAZED_TERRACOTTA_PRESSURE_PLATES.pick(color).get(), TTBlocks.GLAZED_TERRACOTTA_STAIRS.pick(color).get(), TTBlocks.GLAZED_TERRACOTTA_SLABS.pick(color).get(), TTBlocks.GLAZED_TERRACOTTA_WALLS.pick(color).get(), Blocks.GLAZED_TERRACOTTA.pick(color));
-        }*/
+        }
     }
 
     private void registerAll(BlockModelGenerators gen, Block button, Block pressurePlate, Block stairs, Block slab, Block wall, Block textureSource) {

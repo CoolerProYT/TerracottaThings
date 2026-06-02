@@ -1,5 +1,5 @@
-// 26.1.2	2026-05-20T19:24:26.6011732	Tags for minecraft:item mod id terracottathings
-f7c79033c3e25b780cbdb2af927534845b703e66 data/minecraft/tags/item/buttons.json
-5c2caca0e7cfb18b3440c64e6d50aef1b4fbda9b data/minecraft/tags/item/slabs.json
-437fd9f0d7c05f36eef97295bdae7ef8f1e6e2a3 data/minecraft/tags/item/stairs.json
-4403935a4f69810077d9b7cf6ac931c341997d08 data/minecraft/tags/item/walls.json
+// 26.2-pre-2	2026-06-03T00:55:07.4249701	Tags for minecraft:item mod id terracottathings
+d545c2734fe3600556fd614bb9cce96269be12f1 data/minecraft/tags/item/buttons.json
+b6113823acf68c59570b4340ccd9121dc0dd98da data/minecraft/tags/item/slabs.json
+e6d130f8d401b6bb6bd285355524d49ce83bb200 data/minecraft/tags/item/stairs.json
+4240c618524e168975684c0a759150822c671511 data/minecraft/tags/item/walls.json

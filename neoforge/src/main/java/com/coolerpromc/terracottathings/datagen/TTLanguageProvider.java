@@ -24,7 +24,7 @@ public class TTLanguageProvider extends LanguageProvider {
         for (DyeColor color : DyeColor.values()) {
             String title = toTitleCase(color.getName());
 
-            /*add(TTBlocks.DYED_TERRACOTTA_BUTTONS.pick(color).get(),title + " Terracotta Button");
+            add(TTBlocks.DYED_TERRACOTTA_BUTTONS.pick(color).get(),title + " Terracotta Button");
             add(TTBlocks.DYED_TERRACOTTA_PRESSURE_PLATES.pick(color).get(),title + " Terracotta Pressure Plate");
             add(TTBlocks.DYED_TERRACOTTA_STAIRS.pick(color).get(),title + " Terracotta Stairs");
             add(TTBlocks.DYED_TERRACOTTA_SLABS.pick(color).get(),title + " Terracotta Slab");
@@ -34,7 +34,7 @@ public class TTLanguageProvider extends LanguageProvider {
             add(TTBlocks.GLAZED_TERRACOTTA_PRESSURE_PLATES.pick(color).get(),title + " Glazed Terracotta Pressure Plate");
             add(TTBlocks.GLAZED_TERRACOTTA_STAIRS.pick(color).get(),title + " Glazed Terracotta Stairs");
             add(TTBlocks.GLAZED_TERRACOTTA_SLABS.pick(color).get(),title + " Glazed Terracotta Slab");
-            add(TTBlocks.GLAZED_TERRACOTTA_WALLS.pick(color).get(),title + " Glazed Terracotta Wall");*/
+            add(TTBlocks.GLAZED_TERRACOTTA_WALLS.pick(color).get(),title + " Glazed Terracotta Wall");
         }
     }
 

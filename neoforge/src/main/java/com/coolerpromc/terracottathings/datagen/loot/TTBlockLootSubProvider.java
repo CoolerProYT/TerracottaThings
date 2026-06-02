@@ -20,7 +20,7 @@ public class TTBlockLootSubProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        /*dropSelf(TTBlocks.TERRACOTTA_BUTTON.get());
+        dropSelf(TTBlocks.TERRACOTTA_BUTTON.get());
         TTBlocks.DYED_TERRACOTTA_BUTTONS.map(RegistryHandler.Blocks::get).forEach(this::dropSelf);
         TTBlocks.GLAZED_TERRACOTTA_BUTTONS.map(RegistryHandler.Blocks::get).forEach(this::dropSelf);
 
@@ -38,7 +38,7 @@ public class TTBlockLootSubProvider extends BlockLootSubProvider {
 
         dropSelf(TTBlocks.TERRACOTTA_WALL.get());
         TTBlocks.DYED_TERRACOTTA_WALLS.map(RegistryHandler.Blocks::get).forEach(this::dropSelf);
-        TTBlocks.GLAZED_TERRACOTTA_WALLS.map(RegistryHandler.Blocks::get).forEach(this::dropSelf);*/
+        TTBlocks.GLAZED_TERRACOTTA_WALLS.map(RegistryHandler.Blocks::get).forEach(this::dropSelf);
     }
 
     @Override

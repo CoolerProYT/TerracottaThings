@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 
 public class TTCreativeTabs {
-    public static final RegistryHandler<CreativeModeTab> TERRACOTTA_THINGS = Services.REGISTRY.registerCreativeTab(
+    public static final RegistryHandler<CreativeModeTab, CreativeModeTab> TERRACOTTA_THINGS = Services.REGISTRY.registerCreativeTab(
             "terracotta_things",
             TTBlocks.TERRACOTTA_BUTTON::toStack,
             Component.translatable("itemGroup.terracottathings.terracotta_things"),

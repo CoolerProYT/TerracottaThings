@@ -3,6 +3,7 @@ package com.coolerpromc.terracottathings.datagen;
 import com.coolerpromc.terracottathings.Constants;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockItemTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
@@ -18,8 +19,8 @@ public class TTBlockItemTagProvider extends BlockTagCopyingItemTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider registries) {
         copy(BlockTags.WALLS, ItemTags.WALLS);
-        copy(BlockTags.SLABS, ItemTags.SLABS);
-        copy(BlockTags.STAIRS, ItemTags.STAIRS);
-        copy(BlockTags.BUTTONS, ItemTags.BUTTONS);
+        copy(BlockTags.SLABS, BlockItemTags.SLABS.item());
+        copy(BlockTags.STAIRS, BlockItemTags.STAIRS.item());
+        copy(BlockTags.BUTTONS, BlockItemTags.BUTTONS.item());
     }
 }
