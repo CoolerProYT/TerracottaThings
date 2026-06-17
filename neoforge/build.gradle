@@ -82,8 +82,10 @@ publishMods {
     curseforge {
         projectId = "1548711"
         accessToken = findProperty("CF_TOKEN")
-        changelogType = "markdown"
         minecraftVersions.add(minecraft_version)
+
+        client = true
+        server = true
     }
 
     modrinth {
