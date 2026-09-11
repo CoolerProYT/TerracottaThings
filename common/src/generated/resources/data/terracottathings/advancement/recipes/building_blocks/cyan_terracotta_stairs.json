@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "terracottathings:cyan_terracotta_stairs"
+        "recipes": "terracottathings:cyan_terracotta_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

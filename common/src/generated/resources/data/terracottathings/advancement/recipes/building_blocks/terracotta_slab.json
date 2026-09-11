@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "terracottathings:terracotta_slab"
+        "recipes": "terracottathings:terracotta_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

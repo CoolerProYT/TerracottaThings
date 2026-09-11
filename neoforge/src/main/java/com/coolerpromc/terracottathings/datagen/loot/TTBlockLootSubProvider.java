@@ -3,9 +3,9 @@ package com.coolerpromc.terracottathings.datagen.loot;
 import com.coolerpromc.terracottathings.Constants;
 import com.coolerpromc.terracottathings.block.TTBlocks;
 import com.coolerpromc.terracottathings.platform.util.RegistryHandler;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 
@@ -14,8 +14,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class TTBlockLootSubProvider extends BlockLootSubProvider {
-    public TTBlockLootSubProvider(HolderLookup.Provider provider) {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), provider);
+    public TTBlockLootSubProvider(LootTableSubProvider.Context output) {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), output);
     }
 
     @Override

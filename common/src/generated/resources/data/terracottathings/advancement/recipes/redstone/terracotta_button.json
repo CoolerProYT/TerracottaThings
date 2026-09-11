@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "terracottathings:terracotta_button"
+        "recipes": "terracottathings:terracotta_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

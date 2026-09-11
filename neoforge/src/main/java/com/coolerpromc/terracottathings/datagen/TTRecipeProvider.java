@@ -1,22 +1,19 @@
 package com.coolerpromc.terracottathings.datagen;
 
-import com.coolerpromc.terracottathings.Constants;
 import com.coolerpromc.terracottathings.block.TTBlocks;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.PackOutput;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
-import java.util.concurrent.CompletableFuture;
-
 public class TTRecipeProvider extends RecipeProvider {
-    protected TTRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
-        super(registries, output);
+    protected TTRecipeProvider(BootstrapContext<Recipe<?>> recipeOutput, BootstrapContext<Advancement> advancementOutput) {
+        super(recipeOutput, advancementOutput);
     }
 
     @Override
@@ -39,21 +36,5 @@ public class TTRecipeProvider extends RecipeProvider {
         stairBuilder(stairs, Ingredient.of(source)).unlockedBy(getHasName(source), has(source)).save(output);
         slab(RecipeCategory.BUILDING_BLOCKS, slab, source);
         wall(RecipeCategory.BUILDING_BLOCKS, wall, source);
-    }
-
-    public static class Runner extends RecipeProvider.Runner {
-        protected Runner(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> registries) {
-            super(packOutput, registries);
-        }
-
-        @Override
-        protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
-            return new TTRecipeProvider(registries, output);
-        }
-
-        @Override
-        public String getName() {
-            return Constants.MOD_NAME + " Recipes";
-        }
     }
 }

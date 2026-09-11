@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "terracottathings:green_glazed_terracotta_wall"
+        "recipes": "terracottathings:green_glazed_terracotta_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
