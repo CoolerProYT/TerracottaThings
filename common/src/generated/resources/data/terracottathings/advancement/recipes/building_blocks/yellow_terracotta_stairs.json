@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipes": "terracottathings:yellow_terracotta_stairs"
+        "recipe": "terracottathings:yellow_terracotta_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

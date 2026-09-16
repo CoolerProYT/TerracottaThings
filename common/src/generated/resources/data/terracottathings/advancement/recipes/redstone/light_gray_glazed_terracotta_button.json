@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "terracottathings:light_gray_glazed_terracotta_button"
+        "recipe": "terracottathings:light_gray_glazed_terracotta_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
