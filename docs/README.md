@@ -27,4 +27,4 @@ Vanilla items, such as the terracotta in recipes, load from the hosted renders a
 
 `.github/workflows/docs.yml` builds the site and deploys it to GitHub Pages on every push to the repository's default branch, or when run by hand from the Actions tab. Before the first run, set **Settings > Pages > Source** to **GitHub Actions**.
 
-The site is built for `https://<user>.github.io/TerracottaThings/`. For a custom domain, set `DOCS_BASE: /` on the build step and add `public/CNAME`.
+The site is built for the root of its custom domain, https://terracottathings.coolerpromc.com, set in **Settings > Pages > Custom domain**. To serve it from `https://<user>.github.io/TerracottaThings/` instead, remove `DOCS_BASE: /` from the build step.

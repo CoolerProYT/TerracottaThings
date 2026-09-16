@@ -37,9 +37,11 @@ jobs:
 
       - run: npm ci
 
-      # Runs the data sync first. Built for https://<user>.github.io/TerracottaThings/.
-      # For a custom (sub)domain, add `env: DOCS_BASE: /` here and a public/CNAME file.
+      # Runs the data sync first. Served from the root of a custom (sub)domain, so no /TerracottaThings/ prefix.
+      # Remove DOCS_BASE to go back to https://<user>.github.io/TerracottaThings/.
       - run: npm run build
+        env:
+          DOCS_BASE: /
 
       - uses: actions/upload-pages-artifact@v3
         with:
