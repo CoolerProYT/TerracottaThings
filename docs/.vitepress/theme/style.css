@@ -1,0 +1,31 @@
+:root {
+  --vp-c-brand-1: #a4512c;
+  --vp-c-brand-2: #b8603a;
+  --vp-c-brand-3: #c9714a;
+  --vp-c-brand-soft: rgba(164, 81, 44, 0.14);
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #a4512c 20%, #3f7f8c);
+  --vp-home-hero-image-background-image: radial-gradient(circle, rgba(201, 113, 74, 0.35) 0%, rgba(201, 113, 74, 0) 70%);
+  --vp-home-hero-image-filter: blur(40px);
+
+  --tt-slot-bg: #8b8b8b;
+  --tt-slot-dark: #373737;
+  --tt-slot-light: #ffffff;
+}
+
+.dark {
+  --vp-c-brand-1: #e59772;
+  --vp-c-brand-2: #d6825c;
+  --vp-c-brand-3: #b8603a;
+  --vp-c-brand-soft: rgba(229, 151, 114, 0.16);
+}
+
+.VPHero .image-src {
+  width: 240px;
+  height: 240px;
+}
+
+.tt-muted {
+  color: var(--vp-c-text-2);
+  font-size: 0.875em;
+}
