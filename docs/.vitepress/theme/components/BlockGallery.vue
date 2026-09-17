@@ -22,7 +22,7 @@ const visible = computed(() => {
   )
 })
 
-const icon = (id: string) => withBase(itemIcon(id)?.src ?? '')
+const icon = (id: string) => itemIcon(id) ?? ''
 
 const detail = ref<HTMLElement | null>(null)
 

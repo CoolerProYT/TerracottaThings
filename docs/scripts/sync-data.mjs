@@ -1,6 +1,6 @@
 // Pulls wiki data straight from the mod so the docs never drift from the game:
-// datagen output (recipes, lang, tags, loot tables) and the block icons rendered into public/icons/.
-// Run `./gradlew :neoforge:runData` first when the mod's data changes, and `npm run icons` when its models change.
+// datagen output (recipes, lang, tags, loot tables).
+// Run `./gradlew :neoforge:runData` first when the mod's data changes. Block icons are hosted; see scripts/render-icons.mjs.
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { basename, dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -54,14 +54,6 @@ blocks.sort(
     FAMILIES.indexOf(a.family) - FAMILIES.indexOf(b.family) ||
     COLORS.indexOf(a.color) - COLORS.indexOf(b.color),
 )
-
-const textures = {}
-const icons = join(docs, 'public/icons')
-for (const file of existsSync(icons) ? readdirSync(icons).filter((f) => f.endsWith('.png')) : []) {
-  textures[`${modId}:${basename(file, '.png')}`] = `/icons/${file}`
-}
-const missingIcons = blocks.filter((block) => !textures[block.id])
-if (missingIcons.length > 0) console.warn(`${missingIcons.length} blocks have no icon. Run npm run icons.`)
 
 const ingredient = (value) => {
   if (typeof value === 'string') return value
@@ -120,8 +112,8 @@ const doubleDrops = jsonFiles(join(data, 'loot_table/blocks'))
 mkdirSync(join(docs, '.vitepress/data'), { recursive: true })
 writeFileSync(
   join(docs, '.vitepress/data/data.json'),
-  JSON.stringify({ colors: COLORS, shapes: SHAPES, families: FAMILIES, names, textures, blocks, recipes, tags, doubleDrops }, null, 2),
+  JSON.stringify({ colors: COLORS, shapes: SHAPES, families: FAMILIES, names, blocks, recipes, tags, doubleDrops }, null, 2),
 )
 console.log(
-  `Synced ${blocks.length} blocks, ${recipes.length} recipes, ${tags.length} tags, ${Object.keys(textures).length} icons.`,
+  `Synced ${blocks.length} blocks, ${recipes.length} recipes, ${tags.length} tags.`,
 )

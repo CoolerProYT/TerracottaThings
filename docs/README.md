@@ -14,14 +14,16 @@ npm run build                 # syncs data, then builds to .vitepress/dist
 
 ## Block icons
 
-The mod's blocks reuse vanilla textures and have no item textures of their own, so their icons are rendered from the block models and committed in `public/icons/`. Re-render them when blocks are added or their models change:
+The mod's blocks reuse vanilla textures and have no item textures of their own, so their icons are rendered from the block models and hosted with the vanilla renders, at `https://storage.googleapis.com/coolerpromc/textures/terracottathings/<block>.png` (1024x1024). Vanilla items, such as the terracotta in recipes, load from `.../textures/minecraft/`. The URL is set in `.vitepress/theme/terracotta.ts`.
+
+Re-render and upload them when blocks are added or their models change:
 
 ```bash
-npm run icons                 # needs the project built once, for the Minecraft jar in the Gradle cache
-node scripts/render-icons.mjs path/to/minecraft-client.jar   # or point it at a jar
+npm run icons                 # renders to .icons/ (git-ignored); needs the project built once, for the Minecraft jar in the Gradle cache
+npm run icons:upload          # copies .icons/*.png to gs://coolerpromc/textures/terracottathings/, needs gcloud signed in
 ```
 
-Vanilla items, such as the terracotta in recipes, load from the hosted renders at `https://storage.googleapis.com/coolerpromc/textures/`, set in `.vitepress/theme/terracotta.ts`.
+To render from another jar, run `node scripts/render-icons.mjs path/to/minecraft-client.jar`.
 
 ## Publishing
 

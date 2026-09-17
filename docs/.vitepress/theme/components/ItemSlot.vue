@@ -11,8 +11,7 @@ const props = withDefaults(defineProps<{ id?: string | null; count?: number; lab
 })
 
 const name = computed(() => (props.id ? itemName(props.id) : ''))
-const icon = computed(() => (props.id ? itemIcon(props.id) : null))
-const src = computed(() => (icon.value ? (icon.value.local ? withBase(icon.value.src) : icon.value.src) : null))
+const src = computed(() => (props.id ? itemIcon(props.id) : null))
 
 // Falls back to initials when an item has no icon or the hosted icon fails to load.
 const failed = ref(false)

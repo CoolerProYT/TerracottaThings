@@ -3,16 +3,18 @@ import { defineConfig } from 'vitepress'
 // GitHub Pages serves a project site from /<repository>/. For a custom domain or a user site, build with DOCS_BASE=/.
 const base = process.env.DOCS_BASE ?? '/TerracottaThings/'
 
+// Block icons are hosted with the vanilla renders; see scripts/render-icons.mjs.
+const icon = 'https://storage.googleapis.com/coolerpromc/textures/terracottathings/orange_glazed_terracotta_stairs.png'
+
 export default defineConfig({
   title: 'Terracotta Things',
   description: 'Buttons, pressure plates, stairs, slabs and walls for every terracotta and glazed terracotta color. Minecraft 26.3, Fabric and NeoForge.',
   base,
   cleanUrls: true,
   srcExclude: ['README.md', 'scripts/**'],
-  // `head` entries are not rewritten for the base path, unlike links, images and the theme logo.
-  head: [['link', { rel: 'icon', type: 'image/png', href: `${base}icons/orange_glazed_terracotta_stairs.png` }]],
+  head: [['link', { rel: 'icon', type: 'image/png', href: icon }]],
   themeConfig: {
-    logo: { src: '/icons/orange_glazed_terracotta_stairs.png', alt: '' },
+    logo: { src: icon, alt: '' },
     nav: [
       { text: 'Guide', link: '/guide/getting-started' },
       { text: 'All blocks', link: '/guide/blocks' },

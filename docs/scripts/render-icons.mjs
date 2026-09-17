@@ -1,23 +1,25 @@
-// Renders an inventory icon for every mod block into public/icons/.
+// Renders an inventory icon for every mod block into .icons/, ready to upload to the texture bucket
+// (gs://coolerpromc/textures/terracottathings/<block>.png, 1024x1024 like the vanilla renders there).
 // The mod's blocks reuse vanilla textures and have no item textures of their own, so each icon is drawn
 // from the block's item model: datagen output for the model, the vanilla client jar for parent models and textures.
 // The jar is found in the Gradle cache after the project has been built once. Pass a path to use another jar:
 //   node scripts/render-icons.mjs [path/to/minecraft.jar]
-// The renders are committed, so run this only when blocks or their models change.
+// Run this, then `npm run icons:upload`, only when blocks or their models change.
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { basename, dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { crc32, deflateSync, inflateRawSync, inflateSync } from 'node:zlib'
 
-const SIZE = Number(process.env.ICON_SIZE ?? 128)
-const SAMPLES = 3 // per axis, so edges are smoothed without blurring texels
+const SIZE = Number(process.env.ICON_SIZE ?? 1024)
+// Samples per pixel, per axis. Small renders need a few to smooth edges; at 1024px a texel is ~40px wide.
+const SAMPLES = SIZE >= 512 ? 1 : 3
 
 const docs = join(dirname(fileURLToPath(import.meta.url)), '..')
 const root = join(docs, '..')
 const generated = join(root, 'common/src/generated/resources')
 const modId = 'terracottathings'
-const out = join(docs, 'public/icons')
+const out = join(docs, '.icons')
 
 // ---------- vanilla jar ----------
 

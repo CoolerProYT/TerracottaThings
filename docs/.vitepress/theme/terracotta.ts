@@ -39,7 +39,6 @@ export const data = raw as unknown as {
   shapes: Shape[]
   families: Family[]
   names: Record<string, string>
-  textures: Record<string, string>
   blocks: Block[]
   recipes: Recipe[]
   tags: Tag[]
@@ -86,19 +85,19 @@ export function colorName(color: string | null): string {
   return color ? prettify(color) : 'Plain'
 }
 
-/** Hosted renders of vanilla items, one PNG per item id. Mojang's textures are not bundled here. */
-const VANILLA_ICONS = 'https://storage.googleapis.com/coolerpromc/textures'
-
 /**
- * Where to load an item's icon from. Mod blocks use the icons rendered by scripts/render-icons.mjs
- * (a site path); vanilla items use the hosted renders.
+ * Hosted item renders, one PNG per item id, under the item's namespace. Vanilla renders are shared with the other
+ * wikis; the mod's own are drawn by scripts/render-icons.mjs and uploaded with `npm run icons:upload`.
  */
-export function itemIcon(id: string): { src: string; local: boolean } | null {
-  if (data.textures[id]) return { src: data.textures[id], local: true }
+const ICONS = 'https://storage.googleapis.com/coolerpromc/textures'
+const HOSTED_NAMESPACES = ['minecraft', 'terracottathings']
+
+/** URL of an item's icon, or null when there is no hosted render for its namespace. */
+export function itemIcon(id: string): string | null {
   // @ts-ignore
   const [namespace, path] = id.includes(':') ? id.split(':') : ['minecraft', id]
-  if (namespace !== 'minecraft') return null
-  return { src: `${VANILLA_ICONS}/${namespace}/${path}.png`, local: false }
+  if (!HOSTED_NAMESPACES.includes(namespace)) return null
+  return `${ICONS}/${namespace}/${path}.png`
 }
 
 export function findRecipe(id: string): Recipe | undefined {

@@ -5,6 +5,7 @@
   "scripts": {
     "sync": "node scripts/sync-data.mjs",
     "icons": "node scripts/render-icons.mjs",
+    "icons:upload": "gcloud storage cp \".icons/*.png\" gs://coolerpromc/textures/terracottathings/",
     "dev": "npm run sync && vitepress dev",
     "build": "npm run sync && vitepress build",
     "preview": "vitepress preview"

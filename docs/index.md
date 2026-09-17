@@ -6,7 +6,7 @@ hero:
   text: Build with terracotta the way you build with stone
   tagline: Buttons, pressure plates, stairs, slabs and walls for every terracotta and glazed terracotta color. For Minecraft 26.3 on Fabric and NeoForge.
   image:
-    src: /icons/orange_glazed_terracotta_stairs.png
+    src: https://storage.googleapis.com/coolerpromc/textures/terracottathings/orange_glazed_terracotta_stairs.png
     alt: Orange Glazed Terracotta Stairs
   actions:
     - theme: brand

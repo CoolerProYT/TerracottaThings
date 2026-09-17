@@ -8,7 +8,7 @@ import RecipeCard from './RecipeCard.vue'
 /** Every block made from one terracotta color, with its recipe. */
 const base = ref('minecraft:terracotta')
 const blocks = computed(() => data.blocks.filter((block) => block.base === base.value))
-const icon = (id: string) => withBase(itemIcon(id)?.src ?? '')
+const icon = (id: string) => itemIcon(id) ?? ''
 </script>
 
 <template>
