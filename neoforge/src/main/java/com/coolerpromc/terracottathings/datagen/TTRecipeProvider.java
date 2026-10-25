@@ -1,6 +1,8 @@
 package com.coolerpromc.terracottathings.datagen;
 
 import com.coolerpromc.terracottathings.block.TTBlocks;
+import com.coolerpromc.terracottathings.Constants;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -36,5 +38,14 @@ public class TTRecipeProvider extends RecipeProvider {
         stairBuilder(stairs, Ingredient.of(source)).unlockedBy(getHasName(source), has(source)).save(output);
         slab(RecipeCategory.BUILDING_BLOCKS, slab, source);
         wall(RecipeCategory.BUILDING_BLOCKS, wall, source);
+        terracottaStonecutting(RecipeCategory.BUILDING_BLOCKS, stairs, source, 1);
+        terracottaStonecutting(RecipeCategory.BUILDING_BLOCKS, slab, source, 2);
+        terracottaStonecutting(RecipeCategory.DECORATIONS, wall, source, 1);
+    }
+
+    private void terracottaStonecutting(RecipeCategory category, Block result, Block source, int count) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(source), category, result, count)
+            .unlockedBy(getHasName(source), has(source))
+            .save(output, Constants.id(getConversionRecipeName(result, source) + "_stonecutting").toString());
     }
 }

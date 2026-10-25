@@ -72,3 +72,10 @@ publishMods {
         minecraftVersions.add(minecraft_version)
     }
 }
+// MC-Test is available only in development runs.
+repositories {
+    maven { url = 'https://maven.coolerpromc.com/releases/' }
+}
+dependencies {
+    localRuntime("com.coolerpromc.mctest:mctest-fabric-${minecraft_version}:26.3.0.2") { transitive = false }
+}

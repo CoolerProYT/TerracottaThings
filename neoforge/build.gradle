@@ -94,3 +94,14 @@ publishMods {
         minecraftVersions.add(minecraft_version)
     }
 }
+// MC-Test is available only in development runs.
+repositories {
+    maven { url = 'https://maven.coolerpromc.com/releases/' }
+}
+configurations {
+    localRuntime
+    runtimeClasspath.extendsFrom localRuntime
+}
+dependencies {
+    localRuntime("com.coolerpromc.mctest:mctest-neoforge-${minecraft_version}:26.3.0.2") { transitive = false }
+}
