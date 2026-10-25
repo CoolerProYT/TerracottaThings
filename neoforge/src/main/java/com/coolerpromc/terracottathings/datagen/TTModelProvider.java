@@ -2,6 +2,16 @@ package com.coolerpromc.terracottathings.datagen;
 
 import com.coolerpromc.terracottathings.Constants;
 import com.coolerpromc.terracottathings.block.TTBlocks;
+import com.coolerpromc.terracottathings.block.GlazedTerracottaSlabBlock;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.ModelLocationUtils;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.state.properties.SlabType;
+import net.minecraft.world.level.block.SlabBlock;
+import static net.minecraft.client.data.models.BlockModelGenerators.*;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
@@ -52,6 +62,22 @@ public class TTModelProvider extends ModelProvider {
     }
 
     private void registerAll(BlockModelGenerators gen, Block button, Block pressurePlate, Block stairs, Block slab, Block wall, Block textureSource) {
-        gen.familyWithExistingFullBlock(textureSource).button(button).pressurePlate(pressurePlate).stairs(stairs).slab(slab).wall(wall);
+        var family = gen.familyWithExistingFullBlock(textureSource).button(button).pressurePlate(pressurePlate).stairs(stairs).wall(wall);
+        if (slab instanceof GlazedTerracottaSlabBlock) {
+            var textures = TextureMapping.cube(textureSource);
+            var bottom = ModelTemplates.SLAB_BOTTOM.create(slab, textures, gen.modelOutput);
+            var top = ModelTemplates.SLAB_TOP.create(slab, textures, gen.modelOutput);
+            gen.blockStateOutput.accept(MultiVariantGenerator.dispatch(slab)
+                .with(PropertyDispatch.initial(SlabBlock.TYPE)
+                    .select(SlabType.BOTTOM, plainVariant(bottom))
+                    .select(SlabType.TOP, plainVariant(top))
+                    .select(SlabType.DOUBLE, plainVariant(ModelLocationUtils.getModelLocation(textureSource))))
+                .with(PropertyDispatch.modify(GlazedTerracottaSlabBlock.FACING)
+                    .select(Direction.SOUTH, NOP).select(Direction.WEST, Y_ROT_90)
+                    .select(Direction.NORTH, Y_ROT_180).select(Direction.EAST, Y_ROT_270)));
+            gen.registerSimpleItemModel(slab, bottom);
+        } else {
+            family.slab(slab);
+        }
     }
 }
