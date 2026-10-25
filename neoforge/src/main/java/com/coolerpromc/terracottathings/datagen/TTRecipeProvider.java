@@ -5,6 +5,7 @@ import com.coolerpromc.terracottathings.block.TTBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -39,6 +40,15 @@ public class TTRecipeProvider extends RecipeProvider {
         stairBuilder(stairs, Ingredient.of(source)).unlockedBy(getHasName(source), has(source)).save(output);
         slab(RecipeCategory.BUILDING_BLOCKS, slab, source);
         wall(RecipeCategory.BUILDING_BLOCKS, wall, source);
+        terracottaStonecutting(RecipeCategory.BUILDING_BLOCKS, stairs, source, 1);
+        terracottaStonecutting(RecipeCategory.BUILDING_BLOCKS, slab, source, 2);
+        terracottaStonecutting(RecipeCategory.DECORATIONS, wall, source, 1);
+    }
+
+    private void terracottaStonecutting(RecipeCategory category, Block result, Block source, int count) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(source), category, result, count)
+            .unlockedBy(getHasName(source), has(source))
+            .save(output, Constants.id(getConversionRecipeName(result, source) + "_stonecutting").toString());
     }
 
     public static class Runner extends RecipeProvider.Runner {

@@ -29,7 +29,7 @@ public class TTBlocks {
     public static final ColorCollection<RegistryHandler.Blocks<ButtonBlock>> GLAZED_TERRACOTTA_BUTTONS = dyedVariants("glazed_terracotta_button", p -> new ButtonBlock(TTBlockSetTypes.TERRACOTTA, 20, p), TTBlocks::buttonProps);
     public static final ColorCollection<RegistryHandler.Blocks<PressurePlateBlock>> GLAZED_TERRACOTTA_PRESSURE_PLATES = dyedVariants("glazed_terracotta_pressure_plate", p -> new PressurePlateBlock(TTBlockSetTypes.TERRACOTTA, p), TTBlocks::pressurePlateProps);
     public static final ColorCollection<RegistryHandler.Blocks<StairBlock>> GLAZED_TERRACOTTA_STAIRS = dyedVariants("glazed_terracotta_stairs", Blocks.GLAZED_TERRACOTTA, (base, p) -> new StairBlock(base.defaultBlockState(), p));
-    public static final ColorCollection<RegistryHandler.Blocks<SlabBlock>> GLAZED_TERRACOTTA_SLABS = dyedVariants("glazed_terracotta_slab", Blocks.GLAZED_TERRACOTTA, (base, p) -> new SlabBlock(p));
+    public static final ColorCollection<RegistryHandler.Blocks<SlabBlock>> GLAZED_TERRACOTTA_SLABS = dyedVariants("glazed_terracotta_slab", Blocks.GLAZED_TERRACOTTA, (base, p) -> new GlazedTerracottaSlabBlock(p));
     public static final ColorCollection<RegistryHandler.Blocks<WallBlock>> GLAZED_TERRACOTTA_WALLS = dyedVariants("glazed_terracotta_wall", Blocks.GLAZED_TERRACOTTA, (base, p) -> new WallBlock(p));
 
     private static ColorCollection<String> names(String suffix) {
